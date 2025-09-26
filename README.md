@@ -19,3 +19,9 @@ Visual Song Highlight: The currently playing song is visibly highlighted in the 
 Mood-Based Filtering : Implemented custom JavaScript filtering logic to dynamically re-render the entire songList based on mood categories (Happy, Chill, Workout), showing effective data manipulation and DOM updating.
 
 Mini-Progress Bar : A subtle mini-progress bar appears next to the currently playing song in the library list. This uses the audio.timeupdate event listener combined with CSS Variables (--progress-width) for smooth, real-time visual feedback, enhancing the UX.
+
+duration bar : u can also seprate song on the basis of time duration
+
+now playing bar : u can see the  song details 
+
+and sorry if u feel baad about anything
