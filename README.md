@@ -20,8 +20,8 @@ Mood-Based Filtering : Implemented custom JavaScript filtering logic to dynamica
 
 Mini-Progress Bar : A subtle mini-progress bar appears next to the currently playing song in the library list. This uses the audio.timeupdate event listener combined with CSS Variables (--progress-width) for smooth, real-time visual feedback, enhancing the UX.
 
-duration bar : u can also seprate song on the basis of time duration
+Duration bar : u can also seprate song on the basis of time duration
 
-now playing bar : u can see the  song details 
+Now playing bar : u can see the  song details and it will resume from where u left the song
 
 and sorry if u feel baad about anything
