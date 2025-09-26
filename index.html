@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/utility.css">
+    <title>Spotify - Web Player: Music for everyone</title>
+</head>
+
+<body>
+    <div class="container flex bg-black">
+        <div class="left bg-grey m-1 p-1">
+            <div class="home bg-grey rounded m-1 p-1">
+                <div class="logo">
+                    <img width="140" class="invert" src="public/logo.svg" alt="Spotify logo">
+                    <img class="invert close" src="public/close.svg" alt="Close">
+                </div>
+                <ul>
+                    <li><img class="invert" src="public/home.svg" alt="Home">Home</li>
+                    </ul>
+            </div>
+
+            <div class="library bg-grey rounded m-1 p-1">
+                <div class="heading">
+                    <img class="invert" src="public/playlist.svg" alt="Your Library">
+                    <h2>Your Library</h2>
+                </div>
+
+                <div class="filter-controls">
+                    <div class="mood-filters flex">
+                        <button class="filter-btn active-filter" data-filter-type="mood" onclick="applyFilter('mood', 'All')">All</button>
+                        <button class="filter-btn" data-filter-type="mood" onclick="applyFilter('mood', 'Happy')">Happy</button>
+                        <button class="filter-btn" data-filter-type="mood" onclick="applyFilter('mood', 'Chill')">Chill</button>
+                        <button class="filter-btn" data-filter-type="mood" onclick="applyFilter('mood', 'Workout')">Workout</button>
+                    </div>
+
+                    <div class="duration-filter flex">
+                        <label for="durationSelect">Duration:</label>
+                        <select id="durationSelect" onchange="applyFilter('duration', this.value)">
+                            <option value="All">All</option>
+                            <option value="Short"> &lt; 3:00</option>
+                            <option value="Medium">3:00 - 4:00</option>
+                            <option value="Long"> &gt; 4:00</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="songList">
+                    <ul>
+                        </ul>
+                </div>
+
+                <div class="footer">
+                    <div><a href="#"><span>Legal</span></a></div>
+                    <div><a href="#"><span>Privacy Center</span></a></div>
+                    <div><a href="#"><span>Privacy Policy</span></a></div>
+                    <div><a href="#"><span>Cookies</span></a></div>
+                    <div><a href="#"><span>About Ads</span></a></div>
+                    <div><a href="#"><span>Accessibility</span></a></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right bg-grey rounded">
+            <div class="header">
+                <div class="hamburgerContainer">
+                    <img class="invert hamburger" src="public/hum.png" alt="Menu">
+                    <div class="nav">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 6L9.70711 11.2929C9.37377 11.6262 9.20711 11.7929 9.20711 12C9.20711 12.2071 9.37377 12.3738 9.70711 12.7071L15 18"
+                                stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 18L14.2929 12.7071C14.6262 12.3738 14.7929 12.2071 14.7929 12C14.7929 11.7929 14.6262 11.6262 14.2929 11.2929L9 6"
+                                stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </div>
+                
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="apne pasandida gaane ki khoj karien">
+                </div>
+
+                <div class="buttons">
+                    <button class="signupbtn">Sign up</button>
+                    <button class="loginbtn">Log in</button>
+                    <img class="invert profileIcon" id="profileIcon" src="public/profile.svg" alt="Profile">
+                </div>
+            </div>
+
+            <div class="now-playing-card">
+                <h2>Now Playing</h2>
+                <div class="playing-content">
+                    <img id="nowPlayingCover" src="" alt="Now Playing Cover">
+                    <div class="playing-details">
+                        <h3 id="nowPlayingTitle">Song Title</h3>
+                        <p id="nowPlayingArtist">Artist Name</p>
+                        <div class="playing-controls">
+                            <img width="35" id="cardPlay" src="public/play.svg" alt="Play/Pause"> 
+                            <button class="view-details-btn" onclick="alert('Gaane ke jaankari ke liye abhi backend par kam nhi kara hai aapka dhanyewad')">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="spotifyPlaylists">
+                <h1>Spotify Playlists</h1>
+                <div class="cardContainer">
+                    <div class="card">
+                        <div class="play">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 20V4L19 12L5 20Z" fill="none" stroke="#141B34" stroke-width="1.5"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <img src="public/happy hits.jpg" alt="Happy Hits">
+                        <h2>Happy Hits</h2>
+                        <p>A playlist full of upbeat songs to lift your mood and keep u smiling</p>
+                    </div>
+                    <div class="card">
+                        <div class="play">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 20V4L19 12L5 20Z" fill="none" stroke="#141B34" stroke-width="1.5"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <img src="public/peace.jpg" alt="Meditation">
+                        <h2>Meditation</h2>
+                        <p>Calm and soothing sounds to help you relax, focus, and findinner peace</p>
+                    </div>
+                    <div class="card">
+                        <div class="play">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 20V4L19 12L5 20Z" fill="none" stroke="#141B34" stroke-width="1.5"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <img src="public/cover.jpg" alt="Jazz for sleep">
+                        <h2>Jazz for sleep</h2>
+                        <p>Soft jazz tunes designed to ease your mind and help youy drift into restful sleep</p>
+                    </div>
+                    <div class="card">
+                        <div class="play">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 20V4L19 12L5 20Z" fill="none" stroke="#141B34" stroke-width="1.5"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <img src="public/Bright_(mood).jpg" alt="Chill Beats">
+                        <h2>Chill Beats</h2>
+                        <p>Chillhop beats to keep you focused and relaxed anytime.</p>
+                    </div>
+                    <div class="card">
+                        <div class="play">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 20V4L19 12L5 20Z" fill="none" stroke="#141B34" stroke-width="1.5"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <img src="public/viral hits.jpg" alt="Viral hits">
+                        <h2>Viral hits</h2>
+                        <p>The hottest trending track and viral hits everyone is listening now.</p>
+                    </div>
+                    <div class="card">
+                        <div class="play">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 20V4L19 12L5 20Z" fill="none" stroke="#141B34" stroke-width="1.5"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <img src="public/acropolis.jpg" alt="Lakshy Jain">
+                        <h2>Lakshy Jain</h2>
+                        <p>Its just a proof that this website is made by me</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="famousArtists">
+                <h1>Famous Artists</h1>
+                <div class="artistContainer">
+                    <div class="artistCard">
+                        <img src="public/arjit.jpg" alt="Arijit Singh">
+                        <h3>Arijit Singh</h3>
+                    </div>
+                    <div class="artistCard">
+                        <img src="public/ed.jpg" alt="Ed Sheeran">
+                        <h3>Ed Sheeran</h3>
+                    </div>
+                    <div class="artistCard">
+                        <img src="public/shreya.jpg" alt="Shreya Ghoshal">
+                        <h3>Shreya Ghoshal</h3>
+                    </div>
+                    <div class="artistCard">
+                        <img src="public/taylor.jpg" alt="Taylor Swift">
+                        <h3>Taylor Swift</h3>
+                    </div>
+                    <div class="artistCard">
+                        <img src="public/steve.jpg" alt="Stevie Wonder">
+                        <h3>Stevie Wonder</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="popularAlbums">
+                <h1>Popular albums and singles</h1>
+                <div class="cardContainer">
+                    <div class="card">
+                        <div class="play">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 20V4L19 12L5 20Z" fill="none" stroke="#141B34" stroke-width="1.5"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <img src="public/Aashiqui 2.jpg" alt="Album Cover Aashiqui 2">
+                        <h2>Aashiqui 2</h2>
+                        <p>Mithoon, Ankit Tiwari</p>
+                    </div>
+                    <div class="card">
+                        <div class="play">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 20V4L19 12L5 20Z" fill="none" stroke="#141B34" stroke-width="1.5"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <img src="public/yeh jawani.jpg" alt="Album Cover Yeh jawaani hai Deewani">
+                        <h2>Yeh jawaani hai Deewani</h2>
+                        <p>Pritham</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="playbar">
+                <div class="abovebar">
+                    <div class="songinfo">Song Title</div>
+                    <div class="songbuttons">
+                        <img width="35" id="previous" src="public/prevsong.svg" alt="Previous song">
+                        <img width="35" id="play" src="public/play.svg" alt="Play/Pause">
+                        <img width="35" id="next" src="public/nextsong.svg" alt="Next song">
+                    </div>
+                    <div class="timevol">
+                        <div class="songtime">00:00 / 00:00</div>
+                        <div class="volume">
+                            <img width="25" id="volumeIconContainer" src="public/volume.svg" alt="Volume"> 
+                            <div class="range">
+                                <input type="range" name="volume" id="volume">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="seekbar">
+                    <div class="circle"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer-section">
+        <div class="footer-columns">
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Jobs</a></li>
+                    <li><a href="#">For the Record</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Communities</h4>
+                <ul>
+                    <li><a href="#">For Artists</a></li>
+                    <li><a href="#">Developers</a></li>
+                    <li><a href="#">Advertising</a></li>
+                    <li><a href="#">Investors</a></li>
+                    <li><a href="#">Vendors</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Useful links</h4>
+                <ul>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Free Mobile App</a></li>
+                    <li><a href="#">Popular by Country</a></li>
+                    <li><a href="#">Import your music</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Spotify Plans</h4>
+                <ul>
+                    <li><a href="#">Premium Individual</a></li>
+                    <li><a href="#">Premium Duo</a></li>
+                    <li><a href="#">Premium Family</a></li>
+                    <li><a href="#">Premium Student</a></li>
+                    <li><a href="#">Spotify Free</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="social-icons">
+            <a href="#"><img src="public/insta.png" alt="Instagram"></a>
+            <a href="#"><img src="public/twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="public/facebook.png" alt="Facebook"></a>
+        </div>
+        <div class="copyright">
+            © 2025 Spotify AB
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
