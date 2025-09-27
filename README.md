@@ -24,4 +24,14 @@ Duration bar : u can also seprate song on the basis of time duration
 
 Now playing bar : u can see the  song details and it will resume from where u left the song
 
+Authentic UI/UX: A high-fidelity reproduction of the modern Spotify Web Player interface, including the dark theme, sidebar, and main content area.
+
+Categorized Content Display: Organized sections for:
+
+    Spotify Playlists (e.g., Happy Hits, Chill Beats)
+
+    Famous Artists (e.g., Arijit Singh, Taylor Swift)
+
+    Popular Albums and Singles
+
 and sorry if u feel baad about anything
